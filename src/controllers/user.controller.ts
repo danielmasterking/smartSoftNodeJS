@@ -49,7 +49,10 @@ export const createUser = async (
   });
 
   
-  res.header('auth-token', token).json(results);
+  res.header('auth-token', token).json({
+    token: token ,
+    dataUser : dataUserJson
+  });
 };
 
 export const updateUser = async (

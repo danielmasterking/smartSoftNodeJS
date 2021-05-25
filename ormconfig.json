@@ -1,10 +1,10 @@
 {
   "type": "postgres",
-  "host": "localhost",
+  "host": "ec2-3-233-7-12.compute-1.amazonaws.com",
   "port": "5432",
-  "username": "postgres",
-  "password": "300438daniel",
-  "database": "smartsoft",
+  "username": "majnorphdvjudt",
+  "password": "1e58ca41208ebb8f697fdb6568d34e0a1918455a607ef621e6f1988e3f971ed7",
+  "database": "d6v3igb7n7o4fp",
   "entities": ["dist/entity/**/*.js"],
   "logging": false,
   "synchronize": true

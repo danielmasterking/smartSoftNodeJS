@@ -22,6 +22,15 @@ export class User {
   @Column()
   password: string;
 
+  @Column()
+  telefono: number;
+
+  @Column()
+  identificacion: number;
+
+  @Column()
+  direccion: string;
+
   static async encrypPassword (password: string) {
     const salt = await bcrypt.genSalt(10);
     return bcrypt.hash(password, salt);
