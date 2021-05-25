@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var router = express_1.Router();
+var verifyToken_1 = require("../libs/verifyToken");
+var product_controller_1 = require("../controllers/product.controller");
+router.get("/products", verifyToken_1.TokenValidation, product_controller_1.getProducts);
+router.get("/products/:id", verifyToken_1.TokenValidation, product_controller_1.getProduct);
+router.post("/products", verifyToken_1.TokenValidation, product_controller_1.createProduct);
+router.put("/products/:id", verifyToken_1.TokenValidation, product_controller_1.updateProduct);
+router.delete("/products/:id", verifyToken_1.TokenValidation, product_controller_1.deleteProduct);
+router.post("/products/search", verifyToken_1.TokenValidation, product_controller_1.searchProduct);
+exports.default = router;
