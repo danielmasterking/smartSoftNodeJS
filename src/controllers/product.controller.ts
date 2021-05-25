@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { getRepository } from "typeorm";
 import { Product } from "../entity/Product";
+import {Like} from "typeorm";
 
 export const getProducts = async (
   req: Request,
@@ -45,4 +46,25 @@ export const updateProduct = async (
 export const deleteProduct = async (req: Request, res: Response): Promise<Response> => {
   const results = await getRepository(Product).delete(req.params.id);
   return res.json(results);
+};
+
+
+export const searchProduct = async (req: Request, res: Response): Promise<Response> => {
+  
+  if(req.body.search != null) {
+    /*var data = await getRepository(Product).find(
+      { 
+        where: "nombre LIKE '%" + req.body.search + "%'" 
+      },
+       
+    );*/
+
+    var data = await getRepository(Product).find({
+      nombre: Like("%" + req.body.search + "%")
+    });
+  }else {
+    var data = await getRepository(Product).find();
+  }
+  
+  return res.json(data);
 };

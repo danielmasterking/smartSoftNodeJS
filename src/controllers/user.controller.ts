@@ -45,7 +45,7 @@ export const createUser = async (
   const dataUserJson = JSON.parse(dataUser);
   
   const token: string = jwt.sign({ _id: dataUserJson.id }, process.env['TOKEN_SECRET'] || '', {
-    expiresIn: 60 * 60 * 24
+    //expiresIn: 60 * 60 * 24
   });
 
   
