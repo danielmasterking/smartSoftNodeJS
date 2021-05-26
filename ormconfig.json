@@ -6,9 +6,6 @@
   "password": "1e58ca41208ebb8f697fdb6568d34e0a1918455a607ef621e6f1988e3f971ed7",
   "database": "d6v3igb7n7o4fp",
   "entities": ["dist/entity/**/*.js"],
-  "logging": false,
-  "synchronize": true,
-  "extra": {
-    "ssl": true
-  }
+  "logging": true,
+  "synchronize": false
 }
