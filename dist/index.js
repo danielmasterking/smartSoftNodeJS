@@ -22,5 +22,5 @@ app.use(morgan_1.default('dev'));
 app.use(user_routes_1.default);
 app.use(product_routes_1.default);
 app.use(auth_routes_1.default);
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 console.log('Server on port', 3000);
